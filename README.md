@@ -13,5 +13,6 @@ SPY, TLT, GLD, etc.
 - Value at Risk
 
 ## Key Findings
-- Gold partially hedged equity crashes
-- Leveraged ETFs exhibited extreme tail risk
+- SPY experienced severe drawdowns during the COVID-19 market crash.
+- TLT showed unexpectedly large losses during the high inflation and rate hiking regime.
+- GLD provided partial downside protection during market stress periods.

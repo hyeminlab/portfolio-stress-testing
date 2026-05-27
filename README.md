@@ -43,6 +43,17 @@ To understand diversification mechanics, individual maximum drawdowns over the f
 - **GLD (Gold):** -22.00%
 - **TLT (Long-term Bonds):** -48.35%
 
+### 3. Extended Portfolio Analysis (Asset Universe Expansion)
+To enhance the portfolio's return profile and stress-test the inclusion of high-beta growth equities and industrial alternatives, the universe was expanded with **Palantir (PLTR, 10%)** and **Silver (SLV, 10%)**, reducing core assets proportionally (SPY 30% / GLD 20% / TLT 30%).
+
+| Portfolio Type | Annualized Return | Annualized Volatility | Maximum Drawdown (MDD) | 95% Daily VaR | 95% Daily ES |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| **Baseline (3 Assets)** | 11.02% | 11.63% | -22.63% | -1.12% | -1.68% |
+| **Extended (5 Assets)** | **16.12%** | **14.63%** | **-29.03%** | **-1.42%** | **-2.02%** |
+
+**Quantitative Revision Insights:**
+- **Risk-Return Trade-off:** Incorporating idiosyncratic growth assets (PLTR) amplified the portfolio's compounded return by **+5.10%p**. 
+- **Tail Risk Amplification:** The trade-off is materialized in the structural degradation of downstream risk metrics. The Maximum Drawdown worsened by **-6.40%p**, and the **Expected Shortfall (ES)** extended beyond the -2% threshold (**-2.02%**). This empirically confirms that adding tactical satellite assets shifts the portfolio along the efficient frontier toward a high-beta regime, demanding more rigorous liquidity buffers during systematic crises.
 ---
 
 ## Key Quantitative Insights & Macro Diagnostics

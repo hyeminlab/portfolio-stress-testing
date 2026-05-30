@@ -84,3 +84,4 @@ While the daily baseline 95% VaR stands at **-1.12%**, our **Expected Shortfall 
 ## Repository Structure
 - `Project_01_Stress_Testing.ipynb`: Core Jupyter Notebook containing data sourcing, portfolio synthesis, rolling statistics, and risk metric calculation logic.
 - `README.md`: Professional research and documentation.
+- 

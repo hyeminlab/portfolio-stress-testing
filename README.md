@@ -1,6 +1,8 @@
 # Multi-Asset Portfolio Stress Testing & Macro Risk Analysis
 
-A quantitative risk management project designed to evaluate the empirical resilience of a traditional diversified multi-asset portfolio under extreme macroeconomic stress regimes. This project goes beyond basic historical backtesting to analyze structural flaws in asset allocation—specifically focusing on volatility clustering and inter-asset correlation breakdowns.
+A quantitative risk management project designed to evaluate the empirical resilience of a traditional diversified multi-asset portfolio under extreme macroeconomic stress regimes. This project goes beyond basic historical backtesting to analyze structural flaws in asset allocation—specifically focusing on volatility clustering, inter-asset correlation breakdowns, and algorithmic risk mitigation.
+
+---
 
 ## Research Motivation (Synergy with Factor Alpha Generation)
 
@@ -10,16 +12,25 @@ Through this rigorous competitive process, I recognized a critical structural li
 
 To bridge this crucial analytical gap between **Alpha Sourcing** and **Institutional Risk Architecture**, I independently engineered this Python-based multi-asset stress-testing framework. The core objective of this project is to construct an autonomous risk engine capable of ingesting arbitrary tactical strategies or synthetic portfolio returns, subsequently exposing them to historical liquidity crunches and inflationary macro shocks. By computing advanced tail-risk metrics tailored to Basel III standards—specifically **95% Historical Value at Risk (VaR)** and **95% Expected Shortfall (ES)**—this framework serves as a rigorous, independent validation filter that stress-tests the economic boundaries of diversified capital allocation.
 
+---
+
 ## Objective
-- Synthesize a diversified asset portfolio and evaluate its performance from 2020 to 2026.
+- Synthesize a diversified asset portfolio and evaluate its empirical performance from 2020 to 2026.
 - Quantify portfolio tail risk under varying macroeconomic regimes (e.g., liquidity shocks vs. inflationary rate-hike cycles).
-- Statistically prove the limitations of Modern Portfolio Theory (MPT) during high-inflation crises.
+- Statistically prove the limitations of Modern Portfolio Theory (MPT) and correlation stability during high-inflation crises.
+- Implement an automated Dynamic Risk Parity model to mathematically mitigate tail-risk degradation.
+
+---
 
 ## Portfolio Architecture
-The portfolio utilizes an optimized baseline multi-asset allocation:
-- **Equities (Growth):** SPY (S&P 500 ETF) — 40%
-- **Alternatives (Inflation Hedge):** GLD (SPDR Gold Shares) — 30%
-- **Fixed Income (Defensive):** TLT (iShares 20+ Year Treasury Bond ETF) — 30%
+The framework evaluates three distinct progressive asset allocation strategies:
+1. **Baseline Portfolio (3 Assets):** Tactical asset mix focused on core diversification.
+   - Equities (Growth): SPY (S&P 500 ETF) — 40%
+   - Alternatives (Inflation Hedge): GLD (SPDR Gold Shares) — 30%
+   - Fixed Income (Defensive): TLT (iShares 20+ Year Treasury Bond ETF) — 30%
+2. **Extended Fixed Portfolio (5 Assets):** Expanded universe to capture idiosyncratic growth and industrial commodities.
+   - SPY (30%) / PLTR (10%) / GLD (20%) / SLV (10%) / TLT (30%)
+3. **Dynamic Risk Parity Portfolio (5 Assets):** Volatility-adjusted allocations updated daily based on a 60-day rolling realized risk parameter ($\omega_i \propto 1/\sigma_i$).
 
 ---
 
@@ -28,14 +39,14 @@ The portfolio utilizes an optimized baseline multi-asset allocation:
 2. **Annualized Volatility:** Quantified asset price dispersion applying the square-root-of-time rule ($\sigma \times \sqrt{252}$).
 3. **Maximum Drawdown (MDD):** Measured the peak-to-trough decline to evaluate worst-case scenario wealth destruction.
 4. **95% Historical Value at Risk (VaR):** Determined the threshold daily loss at a 95% confidence level.
-5. **95% Expected Shortfall (ES / Conditional VaR):** Calculated the mean loss conditional on the portfolio breaching its 95% VaR parameter to measure systemic tail-risk depth.
+5. **95% Expected Shortfall (ES / Conditional VaR):** Calculated the mean loss conditional on the portfolio breaching its 95% VaR parameter to measure systemic tail-risk depth under Basel III guidelines.
 
 ---
 
 ## Comprehensive Empirical Results
 
-### 1. Macro Regime Breakdown Summary
-The table below highlights how the mixed portfolio reacted across distinct macro environments:
+### 1. Macro Regime Breakdown Summary (Baseline Portfolio)
+The table below highlights how the core 3-asset mixed portfolio reacted across distinct historical stress environments:
 
 | Metric | Total Period (2020-2026) | COVID-19 Shock (2020.02 - 2020.04) | Inflation Shock (2022.01 - 2022.12) |
 | :--- | :---: | :---: | :---: |
@@ -45,41 +56,35 @@ The table below highlights how the mixed portfolio reacted across distinct macro
 | **95% Daily VaR** | **-1.12%** | -2.75% | -1.35% |
 | **95% Expected Shortfall (ES)** | **-1.68%** | *Breached* | *Breached* |
 
-### 2. Individual Asset Vulnerability (Stand-alone MDD)
-To understand diversification mechanics, individual maximum drawdowns over the full period were mapped:
-- **SPY (Equities):** -33.72%
-- **GLD (Gold):** -22.00%
-- **TLT (Long-term Bonds):** -48.35%
+*Standalone Asset Vulnerability (Full-Period MDD reference):* SPY: **-33.72%** | GLD: **-22.00%** | TLT: **-48.35%**
 
-### 3. Extended Portfolio Analysis (Asset Universe Expansion)
-To enhance the portfolio's return profile and stress-test the inclusion of high-beta growth equities and industrial alternatives, the universe was expanded with **Palantir (PLTR, 10%)** and **Silver (SLV, 10%)**, reducing core assets proportionally (SPY 30% / GLD 20% / TLT 30%).
+### 2. Strategy Optimization Scoreboard (The Core Comparison)
+The table below maps the complete progression from the baseline portfolio to asset universe expansion and dynamic algorithmic optimization:
 
-| Portfolio Type | Annualized Return | Annualized Volatility | Maximum Drawdown (MDD) | 95% Daily VaR | 95% Daily ES |
+| Portfolio Architecture | Annualized Return | Annualized Volatility | Maximum Drawdown (MDD) | 95% Daily VaR | 95% Daily ES |
 | :--- | :---: | :---: | :---: | :---: | :---: |
 | **Baseline (3 Assets)** | 11.02% | 11.63% | -22.63% | -1.12% | -1.68% |
-| **Extended (5 Assets)** | **16.12%** | **14.63%** | **-29.03%** | **-1.42%** | **-2.02%** |
+| **Extended Fixed (5 Assets)** | 16.12% | 14.63% | -29.03% | -1.42% | -2.02% |
+| **Dynamic Risk Parity (5 Assets) 🌟** | **13.15%** | **12.64%** | **-25.75%** | **-1.25%** | **-1.73%** |
 
-**Quantitative Revision Insights:**
-- **Risk-Return Trade-off:** Incorporating idiosyncratic growth assets (PLTR) amplified the portfolio's compounded return by **+5.10%p**. 
-- **Tail Risk Amplification:** The trade-off is materialized in the structural degradation of downstream risk metrics. The Maximum Drawdown worsened by **-6.40%p**, and the **Expected Shortfall (ES)** extended beyond the -2% threshold (**-2.02%**). This empirically confirms that adding tactical satellite assets shifts the portfolio along the efficient frontier toward a high-beta regime, demanding more rigorous liquidity buffers during systematic crises.
 ---
 
-## Key Quantitative Insights & Macro Diagnostics
+## Advanced Algorithmic & Macro Diagnostics
 
-### 1. The 2020 Pandemic Shock: Classic Non-Linear Diversification
-During the COVID-19 crash, equity markets plummeted (SPY single-asset crash >33%). However, aggressive central bank intervention and interest rate cuts initiated an immediate surge in fixed-income duration (TLT) and gold (GLD). 
-- **Result:** The **negative rolling correlation** between stock and bond returns successfully mitigated downside risk, strictly containing the overall portfolio MDD to **-14.41%**, despite short-term annualized volatility spiking to **24.43%**.
+### 1. The Asset Universe Expansion Trade-off
+Incorporating high-beta idiosyncratic growth assets (**PLTR**) and industrial alternatives (**SLV**) amplified the portfolio's compounded return profile by **+5.10%p** relative to the baseline. However, this alpha generation triggered severe downstream tail-risk degradation. The Maximum Drawdown worsened to **-29.03%**, and the **Expected Shortfall (ES)** breached the -2% barrier (**-2.02%**), empirically proving that adding tactical satellite exposure shifts the allocation toward an aggressive regime demanding a tighter liquidity cushion.
 
-### 2. The 2022 Inflationary Regime: Structural Correlation Breakdown
-The portfolio faced its most critical vulnerability during the 2022 monetary tightening cycle. As the Federal Reserve aggressively raised interest rates to combat inflation, a simultaneous repricing occurred in both equity valuations and fixed-income assets.
-- **The MPT Failure:** Implementing a **60-day Rolling Correlation** analysis mathematically demonstrated that the stock-bond correlation shifted abruptly from a defensive negative territory ($-0.4$ to $-0.6$) to a highly positive territory ($+0.3$). 
-- **Result:** Because both asset classes fell in tandem, traditional diversification failed, resulting in a severe performance drawdown (**Return: -15.96%, MDD: -21.86%**).
+### 2. Dynamic Tail-Risk Mitigation via Risk Parity
+Transitioning from a rigid, static asset mix to an inverse-volatility dynamic engine successfully insulated the portfolio from catastrophic tail events. The Risk Parity engine actively penalizes high-beta asset clusters during volatility spikes, capturing non-stationary risk shifts. This algorithmic rebalancing successfully recovered the Maximum Drawdown by **+3.28%p** and systematically compressed the **Expected Shortfall (ES) back down to -1.73%**.
 
-### 3. Risk Dynamics & Volatility Clustering
-Applying a **60-day Rolling Volatility** filter proved that financial risk is non-stationary. The portfolio experienced distinct risk regimes—short, explosive spikes during liquidity events (2020) versus persistent, elevated risk plateaus during macroeconomic regime shifts (2022). 
+### 3. The 2020 Pandemic Shock: Classic Non-Linear Diversification
+During the COVID-19 cash crunch, equity markets plummeted (SPY crashed >33%). However, aggressive monetary easing initiated an immediate flight-to-safety surge in long-term Treasuries (TLT) and gold (GLD). The robust **negative rolling correlation** between equities and duration assets successfully mitigated downside risk, strictly containing the baseline portfolio MDD to **-14.41%** despite a massive volatility spike (**24.43%**).
 
-### 4. Tail Risk Quantification via Expected Shortfall
-While the daily baseline 95% VaR stands at **-1.12%**, our **Expected Shortfall (ES)** shows a deeper tail risk of **-1.68%**. This indicates that when black swan events break our statistical defensive lines, the portfolio faces an average conditional daily loss of 1.68%, highlighting the vital importance of incorporating conditional risk metrics over simple VaR constraints under Basel III standards.
+### 4. The 2022 Inflationary Regime: Structural Correlation Breakdown
+The asset allocation framework faced its most critical vulnerability during the 2022 monetary tightening cycle. Implementing a **60-day Rolling Correlation** filter mathematically demonstrated that the stock-bond correlation shifted abruptly from a defensive negative territory ($-0.4$ to $-0.6$) to a highly positive regime ($+0.3$). Because both major asset classes fell in tandem due to interest rate spikes, traditional Modern Portfolio Theory (MPT) diversification failed, causing a performance drawdown (**Return: -15.96%, MDD: -21.86%**).
+
+### 5. Risk Non-Stationarity & Volatility Clustering
+Applying a **60-day Rolling Volatility** sieve proved that systemic financial risk is non-stationary. The historical returns show distinct risk patterns: short-lived, explosive spikes during sudden liquidity events (2020) versus persistent, elevated risk plateaus during fundamental macroeconomic regime shifts (2022). This highlights why incorporating conditional tail-risk parameters (ES) under Basel III standards is highly superior to static Value at Risk constraints.
 
 ---
 
@@ -90,7 +95,5 @@ While the daily baseline 95% VaR stands at **-1.12%**, our **Expected Shortfall 
 - **Visualization:** `matplotlib`
 
 ## Repository Structure
-- `Project_01_Stress_Testing.ipynb`: Core Jupyter Notebook containing data sourcing, portfolio synthesis, rolling statistics, and risk metric calculation logic.
-- `README.md`: Professional research and documentation.
-
-- 
+- `Project_01_Stress_Testing.ipynb`: Core Jupyter Notebook containing data sourcing, portfolio synthesis, dynamic Risk Parity logic, rolling statistics, and advanced tail-risk metric calculation.
+- `README.md`: Institutional-grade research documentation and macro risk diagnostics.

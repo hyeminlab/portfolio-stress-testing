@@ -2,6 +2,14 @@
 
 A quantitative risk management project designed to evaluate the empirical resilience of a traditional diversified multi-asset portfolio under extreme macroeconomic stress regimes. This project goes beyond basic historical backtesting to analyze structural flaws in asset allocation—specifically focusing on volatility clustering and inter-asset correlation breakdowns.
 
+## Research Motivation (Synergy with Factor Alpha Generation)
+
+While actively developing and passing mathematical alpha expressions during the **WorldQuant BRAIN International Quant Championship (IQC) 2026 (Stage 02)**, I heavily focused on extracting statistical anomalies from large-scale corporate fundamental datasets. For instance, I successfully implemented expressions targeting asset mispricing based on multi-day historical Z-scores of balance sheet and income statement dynamics (e.g., formulations capturing intangible asset overvaluation like `-1 * ts_zscore(goodwill / sales, 500)`).
+
+Through this rigorous competitive process, I recognized a critical structural limitation inherent in cross-sectional alpha generation platforms: they operate in macro-level silos. While simulators efficiently generate traditional, aggregated performance metrics—such as the Sharpe Ratio, Turnover, and generic Maximum Drawdown (MDD)—they heavily restrict customized downstream risk modeling and non-linear risk diagnostics under shifting macroeconomic regimes.
+
+To bridge this crucial analytical gap between **Alpha Sourcing** and **Institutional Risk Architecture**, I independently engineered this Python-based multi-asset stress-testing framework. The core objective of this project is to construct an autonomous risk engine capable of ingesting arbitrary tactical strategies or synthetic portfolio returns, subsequently exposing them to historical liquidity crunches and inflationary macro shocks. By computing advanced tail-risk metrics tailored to Basel III standards—specifically **95% Historical Value at Risk (VaR)** and **95% Expected Shortfall (ES)**—this framework serves as a rigorous, independent validation filter that stress-tests the economic boundaries of diversified capital allocation.
+
 ## Objective
 - Synthesize a diversified asset portfolio and evaluate its performance from 2020 to 2026.
 - Quantify portfolio tail risk under varying macroeconomic regimes (e.g., liquidity shocks vs. inflationary rate-hike cycles).

@@ -65,7 +65,7 @@ The table below maps the complete progression from the baseline portfolio to ass
 | :--- | :---: | :---: | :---: | :---: | :---: |
 | **Baseline (3 Assets)** | 11.02% | 11.63% | -22.63% | -1.12% | -1.68% |
 | **Extended Fixed (5 Assets)** | 16.12% | 14.63% | -29.03% | -1.42% | -2.02% |
-| **Dynamic Risk Parity (5 Assets) 🌟** | **13.15%** | **12.64%** | **-25.75%** | **-1.25%** | **-1.73%** |
+| **Dynamic Risk Parity (5 Assets)** | **13.15%** | **12.64%** | **-25.75%** | **-1.25%** | **-1.73%** |
 
 ---
 
@@ -100,20 +100,20 @@ Applying a **60-day Rolling Volatility** sieve proved that systemic financial ri
 
 ---
 ## Images
-# 1. 3대 개별 자산 취약성(Individual Asset Vulnerability) 섹션 아래
+# 1. 3대 개별 자산 취약성(Individual Asset Vulnerability) 
 ![SPY Stock Price](./images/no1.SPY_stock_price.png)
 ![Individual Stand-alone MDD](./images/no3.drawdown_comparison.png)
 
-# 2. 1. Macro Regime Breakdown Summary 테이블 바로 아래
+# 2. 1. Macro Regime Breakdown Summary 
 ![Macro Regime Analysis](./images/no4.macro_regime_analysis.jpeg)
 
-# 3. 2. Strategy Optimization Scoreboard 테이블 바로 아래
+# 3. 2. Strategy Optimization Scoreboard 
 ![Cumulative Returns Comparison](./images/no2.culmulative_returns_comparison.png)
 ![Extended Portfolio Risk Summary](./images/no7.extended_portfolio_risk_summary.jpeg)
 ![Static vs Dynamic Risk Parity](./images/no8.static_portfolio_vs_dyanmic_risk_parity.jpeg)
 
-# 4. The 2022 Inflationary Regime: Structural Correlation Breakdown 아래
+# 4. The 2022 Inflationary Regime: Structural Correlation Breakdown 
 ![Correlation Breakdown](./images/no5.correlation_breakdown.png)
 
-# 5. Risk Dynamics & Volatility Clustering 아래
+# 5. Risk Dynamics & Volatility Clustering 
 ![Portfolio Risk Dynamics](./images/no6.portfolio_risk_dynamics.png)

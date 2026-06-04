@@ -97,3 +97,23 @@ Applying a **60-day Rolling Volatility** sieve proved that systemic financial ri
 ## Repository Structure
 - `Project_01_Stress_Testing.ipynb`: Core Jupyter Notebook containing data sourcing, portfolio synthesis, dynamic Risk Parity logic, rolling statistics, and advanced tail-risk metric calculation.
 - `README.md`: Institutional-grade research documentation and macro risk diagnostics.
+
+---
+## Images
+# 1. 3대 개별 자산 취약성(Individual Asset Vulnerability) 섹션 아래
+![SPY Stock Price](./images/no1.SPY_stock_price.png)
+![Individual Stand-alone MDD](./images/no3.drawdown_comparison.png)
+
+# 2. 1. Macro Regime Breakdown Summary 테이블 바로 아래
+![Macro Regime Analysis](./images/no4.macro_regime_analysis.jpeg)
+
+# 3. 2. Strategy Optimization Scoreboard 테이블 바로 아래
+![Cumulative Returns Comparison](./images/no2.culmulative_returns_comparison.png)
+![Extended Portfolio Risk Summary](./images/no7.extended_portfolio_risk_summary.jpeg)
+![Static vs Dynamic Risk Parity](./images/no8.static_portfolio_vs_dyanmic_risk_parity.jpeg)
+
+# 4. The 2022 Inflationary Regime: Structural Correlation Breakdown 아래
+![Correlation Breakdown](./images/no5.correlation_breakdown.png)
+
+# 5. Risk Dynamics & Volatility Clustering 아래
+![Portfolio Risk Dynamics](./images/no6.portfolio_risk_dynamics.png)

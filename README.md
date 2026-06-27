@@ -119,4 +119,4 @@ Applying a **60-day Rolling Volatility** sieve proved that systemic financial ri
 ![Portfolio Risk Dynamics](./images/no6.portfolio_risk_dynamics.png)
 -
 -
-
+-
